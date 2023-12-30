@@ -16,10 +16,13 @@ final AppDataText appDataText;
         ),
         //color: Colors.indigo,
         child: Center(
-        child: Text(appDataText.text,
-        textAlign: TextAlign.center,
-        style: TextStyle(fontSize: 25,
-        color: Colors.white),),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(appDataText.text,
+          textAlign: TextAlign.center,
+          style: TextStyle(fontSize: 25,
+          color: Colors.white),),
+        ),
       ),
       ),
     );

@@ -10,24 +10,44 @@ class Apppageview extends StatefulWidget {
 }
 
 class _ApppageviewState extends State<Apppageview> {
+  var _selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-appBar: AppBar(
-  backgroundColor: Colors.deepPurple,
-title: Text('Quotes'),
-),
+      appBar: AppBar(
+        backgroundColor: Colors.deepPurple,
+        title: Text('Quotes'),
+      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-Container(
-  height: 500,
-child: PageView.builder(
-    itemCount: appDataText.length,
-    itemBuilder: (context ,index){
-return DisplayText(appDataText: appDataText[index]);
-}),
-)
+          Container(
+            height: 500,
+            child: PageView.builder(
+                onPageChanged: (index) {
+                  setState(() {
+                    _selectedIndex = index;
+                    print(index);
+                  });
+                },
+                controller: PageController(viewportFraction: 0.7),
+                itemCount: appDataText.length,
+                itemBuilder: (context, index) {
+                  var scale = _selectedIndex == index ? 1.0 : 0.8;
+                  return TweenAnimationBuilder(
+                    tween: Tween(begin: scale, end: scale),
+                    duration: Duration(milliseconds: 400),
+                    child: DisplayText(appDataText: appDataText[index]),
+                    builder: (context, value, child) {
+                      return Transform.scale(
+                        scale: scale,
+                        child: child,
+                      );
+                    },
+                  );
+                  DisplayText(appDataText: appDataText[index]);
+                }),
+          )
         ],
       ),
     );
