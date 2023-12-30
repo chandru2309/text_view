@@ -15,7 +15,7 @@ class _ApppageviewState extends State<Apppageview> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: Colors.teal,
         title: Text('Quotes'),
       ),
       body: Column(
@@ -47,7 +47,20 @@ class _ApppageviewState extends State<Apppageview> {
                   );
                   DisplayText(appDataText: appDataText[index]);
                 }),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                child: new Text((_selectedIndex +1).toString()+'/'+
+                appDataText.length.toString(),
+                style: TextStyle(
+                  fontSize: 25,color: Colors.black
+                ),)
+              )
+            ],
           )
+
         ],
       ),
     );

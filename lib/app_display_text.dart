@@ -12,7 +12,7 @@ final AppDataText appDataText;
         height: 200,
         width: 300,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),color: Colors.indigo,
+          borderRadius: BorderRadius.circular(15),color: Colors.teal,
         ),
         //color: Colors.indigo,
         child: Center(

@@ -10,4 +10,5 @@ List<AppDataText> appDataText =[
   AppDataText('I believe in Christianity as I believe that the sun has risen: not only because I see it, but because by it I see everything else'),
   AppDataText('Love is not affectionate feeling, but a steady wish for the loved persons ultimate good as far as it can be obtained'),
   AppDataText('It is a good rule after reading a new book, never to allow yourself another new one till you have read an old one'),
+  AppDataText('It is a good rule after reading a new book'),
 ];
